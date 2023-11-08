@@ -14,6 +14,7 @@ WORKDIR /fastcgi-server
 
 COPY hello.c /fastcgi-server
 
+COPY start.sh /fastcgi-server
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
@@ -21,7 +22,6 @@ COPY ./nginx/fastcgi_params /etc/nginx/fastcgi_params
 
 
 RUN gcc -o hello hello.c -lfcgi
-
 
 EXPOSE 81
 
